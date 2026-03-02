@@ -256,3 +256,15 @@
 .animate-slide-right {
   animation: slide-right 25s linear infinite;
 }
+
+
+/* Hide scrollbar for Chrome, Safari */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge */
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+}

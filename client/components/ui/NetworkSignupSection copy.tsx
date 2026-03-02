@@ -95,13 +95,13 @@ export default function NetworkSignupSection() {
   
   ];
 
-  // /* Load Razorpay script */
-  // useEffect(() => {
-  //   const script = document.createElement("script");
-  //   script.src = "https://checkout.razorpay.com/v1/checkout.js";
-  //   script.async = true;
-  //   document.body.appendChild(script);
-  // }, []);
+  /* Load Razorpay script */
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   /* Validation functions */
   const validateName = (name) => /^[A-Za-z\s]+$/.test(name);
@@ -124,36 +124,97 @@ export default function NetworkSignupSection() {
   };
 
   /* Razorpay handler */
- const handlePayment = () => {
-  if (!formData.name || !formData.phone || !formData.email) {
-    alert("Please fill all required fields");
-    return;
+  const handlePayment = () => {
+    if (!formData.name || !formData.phone || !formData.email) {
+      alert("Please fill all required fields");
+      return;
+    }
+
+    if (!validateName(formData.name)) {
+      alert("Name should contain only alphabets");
+      return;
+    }
+
+    if (!validatePhone(formData.phone)) {
+      alert("Phone should contain only numbers or + -");
+      return;
+    }
+
+    if (!validateEmail(formData.email)) {
+      alert("Enter valid email");
+      return;
+    }
+
+    if (!window.Razorpay) {
+      alert("Razorpay SDK not loaded");
+      return;
+    }
+
+    const options = {
+      key: "rzp_live_S9bksWa04mgxRd", // replace with your key id
+      amount: 1 * 100,
+      currency: "INR",
+      name: "SPACE AND BEAUTY CLUB",
+      description: "Lifetime Membership",
+      image:
+        "https://spaceandbeauty.com/cdn/shop/files/PNG_Black_copy.png?v=1767685453&width=100",
+
+     handler: async function (response: {
+  razorpay_payment_id: string;
+  razorpay_order_id: string;
+  razorpay_signature: string;
+}) {
+  const res = await fetch("/api/verify-payment", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      city: formData.city,
+      amount: 2500,
+      razorpay_payment_id: response.razorpay_payment_id,
+      razorpay_order_id: response.razorpay_order_id,
+      razorpay_signature: response.razorpay_signature,
+    }),
+  });
+
+  const data: { success: boolean } = await res.json();
+
+  if (data.success) {
+    clearAndReload();
+  } else {
+    alert("Payment verification failed. Contact support.");
   }
+},
 
-  if (!validateName(formData.name)) {
-    alert("Name should contain only alphabets");
-    return;
-  }
+      /* CANCEL / FAILURE */
+      modal: {
+        ondismiss: function () {
+          clearAndReload();
+        },
+      },
 
-  if (!validatePhone(formData.phone)) {
-    alert("Phone should contain only numbers or + -");
-    return;
-  }
+      prefill: {
+        name: formData.name,
+        email: formData.email,
+        contact: formData.phone,
+      },
 
-  if (!validateEmail(formData.email)) {
-    alert("Enter valid email");
-    return;
-  }
+      notes: {
+        city: formData.city,
+      },
 
-  // 🔥 PUT YOUR REAL DETAILS HERE
-  const shopDomain = "https://spaceandbeauty-club.myshopify.com/";
-  const variantId = "8081708646493";
+      theme: {
+        color: "#FF566D",
+      },
+    };
 
-  const checkoutUrl =
-    `https://${shopDomain}/cart/${variantId}:1?checkout[email]=${formData.email}`;
+    const razorpay = new window.Razorpay(options);
+    razorpay.open();
+  };
 
-  window.location.href = checkoutUrl;
-};
+
 
   
 
