@@ -136,7 +136,7 @@ export default function NetworkSignupSection() {
   }
 
   if (!validatePhone(formData.phone)) {
-    alert("Phone should contain only numbers");
+    alert("Phone should contain only numbers or + -");
     return;
   }
 
@@ -145,8 +145,9 @@ export default function NetworkSignupSection() {
     return;
   }
 
-  const shopDomain = "spaceandbeauty-club.myshopify.com"; // 🔥 replace
-  const variantId = "44236114853981"; // 🔥 replace
+  // 🔥 PUT YOUR REAL DETAILS HERE
+  const shopDomain = "https://spaceandbeauty-club.myshopify.com/";
+  const variantId = "8081708646493";
 
   const checkoutUrl =
     `https://${shopDomain}/cart/${variantId}:1?checkout[email]=${formData.email}`;
