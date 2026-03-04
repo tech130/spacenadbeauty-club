@@ -146,8 +146,8 @@ export default function NetworkSignupSection() {
   }
 
   // 🔥 PUT YOUR REAL DETAILS HERE
-  const shopDomain = "https://spaceandbeauty-club.myshopify.com/";
-  const variantId = "8081708646493";
+  const shopDomain = "spaceandbeauty-club.myshopify.com";
+  const variantId = "44236114853981";
 
   const checkoutUrl =
     `https://${shopDomain}/cart/${variantId}:1?checkout[email]=${formData.email}`;
