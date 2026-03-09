@@ -198,7 +198,7 @@ const handlePayment = () => {
   }
 
   const shopDomain = "spaceandbeauty-club.myshopify.com";
-  const variantId = "?44236697010269";
+  const variantId = "44236697010269";
 
   const checkoutUrl =
     `https://${shopDomain}/cart/${variantId}:1` +
