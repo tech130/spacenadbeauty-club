@@ -156,43 +156,24 @@ export default function NetworkSignupSection() {
 //   window.location.href = checkoutUrl;
 // };
 
-// const handlePayment = () => {
-//   if (!formData.name || !formData.phone || !formData.email) {
-//     alert("Please fill all required fields");
-//     return;
-//   }
-
-//   if (!validateName(formData.name)) {
-//     alert("Name should contain only alphabets");
-//     return;
-//   }
-
-//   if (!validatePhone(formData.phone)) {
-//     alert("Phone should contain only numbers or + -");
-//     return;
-//   }
-
-//   if (!validateEmail(formData.email)) {
-//     alert("Enter valid email");
-//     return;
-//   }
-
-//   const shopDomain = "spaceandbeauty-club.myshopify.com";
-//   const variantId = "44236697010269";
-
-//   const checkoutUrl =
-//     `https://${shopDomain}/cart/${variantId}:1` +
-//     `?checkout[email]=${encodeURIComponent(formData.email)}` +
-//     `&checkout[shipping_address][first_name]=${encodeURIComponent(formData.name)}` +
-//     `&checkout[shipping_address][phone]=${encodeURIComponent(formData.phone)}` +
-//     `&checkout[shipping_address][city]=${encodeURIComponent(formData.city)}`;
-
-//   window.location.href = checkoutUrl;
-// };
-
 const handlePayment = () => {
   if (!formData.name || !formData.phone || !formData.email) {
     alert("Please fill all required fields");
+    return;
+  }
+
+  if (!validateName(formData.name)) {
+    alert("Name should contain only alphabets");
+    return;
+  }
+
+  if (!validatePhone(formData.phone)) {
+    alert("Phone should contain only numbers or + -");
+    return;
+  }
+
+  if (!validateEmail(formData.email)) {
+    alert("Enter valid email");
     return;
   }
 
@@ -208,6 +189,25 @@ const handlePayment = () => {
 
   window.location.href = checkoutUrl;
 };
+
+// const handlePayment = () => {
+//   if (!formData.name || !formData.phone || !formData.email) {
+//     alert("Please fill all required fields");
+//     return;
+//   }
+
+//   const shopDomain = "spaceandbeauty-club.myshopify.com";
+//   const variantId = "44236697010269";
+
+//   const checkoutUrl =
+//     `https://${shopDomain}/cart/${variantId}:1` +
+//     `?checkout[email]=${encodeURIComponent(formData.email)}` +
+//     `&checkout[shipping_address][first_name]=${encodeURIComponent(formData.name)}` +
+//     `&checkout[shipping_address][phone]=${encodeURIComponent(formData.phone)}` +
+//     `&checkout[shipping_address][city]=${encodeURIComponent(formData.city)}`;
+
+//   window.location.href = checkoutUrl;
+// };
 
 
 
