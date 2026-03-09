@@ -11,12 +11,11 @@ export default function HeroSection() {
           {/* LEFT */}
           <div className="max-w-xl space-y-6 text-center md:text-left mx-auto md:mx-0">
             <h1 className="text-[36px] sm:text-[44px] md:text-[52px] leading-[1.15] font-medium text-[#1A1A1A]">
-              A <span className="gradient-text1 ">women only</span> space for
-              meeting like minded people.
+              A <span className="gradient-text1 ">Club Built for Women</span> Who Want More.
             </h1>
 
             <p className="text-base sm:text-lg text-[#6B6B6B]">
-              The Group Chat You Always Wanted IRL.
+              Monthly events. Real skills. A girl gang that shows up. Welcome to the SNB Club.
             </p>
 
             <p className="text-base sm:text-lg font-semibold text-[#6B6B6B]">
@@ -77,7 +76,7 @@ export default function HeroSection() {
 
             {/* FLOATING GLASS CARD */}
             <div className="absolute bottom-6 sm:bottom-10 md:bottom-16 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-56 sm:w-64 p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg flex flex-col gap-3 animate-float-slow">
-              <p className="text-lg font-bold text-black/90">Join Once</p>
+              <p className="text-lg font-bold text-black/90">Join for Life</p>
 
               <div className="inline-flex items-center justify-center px-2 py-1 rounded-full bg-gradient-to-r from-[#FF5C7A] to-[#FF8AA0] text-white font-bold text-lg">
                 ₹2,500
@@ -98,7 +97,7 @@ export default function HeroSection() {
               </div>
 
               <p className="text-sm font-bold text-black/70">
-                No Renewal · No Pressure
+                One-time payment. Lifetime access.
               </p>
             </div>
           </div>

@@ -591,10 +591,9 @@ export default function Index() {
       <div className="relative z-30 h-full flex flex-col justify-between p-12 md:p-24">
         <div className="space-y-8">
           <h2 className="font-baskerville text-5xl md:text-5xl text-text-dark leading-tight max-w-md">
-            This page ends here.
-            <br />
-            The belonging doesn't.
+           Your Girl Gang is Already Inside.
           </h2>
+          <h4>₹2,500. Once. For life. No better time than now.</h4>
           
           <button
   onClick={() => {
@@ -603,7 +602,7 @@ export default function Index() {
   }}
   className="px-8 py-4 rounded-[25px] bg-gradient-primary text-white font-manrope text-base font-semibold hover:opacity-90 transition uppercase"
 >
-  <span className="gradient-text1">Join Us</span>
+  <span className="gradient-text1">Join the SNB Club</span>
 </button>
 
         </div>
@@ -652,22 +651,103 @@ export default function Index() {
     <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
       {/* Column 1 - Brand */}
       <div className="space-y-4">
-        <h3 className="font-manrope text-sm font-semibold uppercase tracking-wider text-text-dark">
+        {/* <h3 className="font-manrope text-sm font-semibold uppercase tracking-wider text-text-dark">
           SpaceAndBeautyClub
-        </h3>
+        </h3> */}
+        <div className="flex items-center">
+            <img 
+              src="https://api.builder.io/api/v1/image/assets/TEMP/a2dba048841fb8fad06150c1c294d95db7325c86?width=196" 
+              alt="Space & Beauty Club" 
+              className="h-12 w-auto"
+            />
+          </div>
         <p className="font-manrope text-xs text-text-dark leading-relaxed">
-          Meet like-minded people.
-          <br />
-          Share meaningful moments.
+           A women's club built for growth, creativity & community.
+          
         </p>
       </div>
 
       {/* Columns 2 & 3 - Empty for spacing */}
+     <div>
+  <h3 className="font-manrope text-sm font-bold mb-6">Links</h3>
+
+  <ul className="space-y-4 font-manrope text-xs font-medium">
+    {[
+      { name: "Home", link: "/" },
+      { name: "Membership", link: "/#form-section" },
+      { name: "Events", link: "/#up-events" },
+      { name: "About", link: "/#why-us" },
+      { name: "FAQs", link: "/#faq" },
+      
+    ].map((item) => (
+      <li key={item.name}>
+        <a href={item.link} className="hover:text-pink-primary transition">
+          {item.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+<div>
+  <h3 className="font-manrope text-sm font-bold mb-6">Follow Us</h3>
+
+  <ul className="space-y-4 font-manrope text-xs font-medium">
+    {[
+      { name: "Instagram", link: "https://instagram.com" },
+      { name: "Facebook", link: "https://facebook.com" },
+      { name: "LinkedIn", link: "https://linkedin.com" },
+      { name: "YouTube", link: "https://youtube.com" },
+    ].map((item) => (
+      <li key={item.name} className=" border-gray-200 pb-2">
+        <a
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-pink-primary transition"
+        >
+          {item.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+
+<div>
+  <h3 className="font-manrope text-sm font-bold mb-6">Contact</h3>
+
+  <ul className="space-y-4 font-manrope text-xs font-medium">
+    <li className=" border-gray-200 pb-2">
+      Address: Chennai, Tamil Nadu, India
+    </li>
+
+    <li className="border-gray-200 pb-2">
+      Email: 
+      <a 
+        href="mailto:club@spaceandbeauty.com" 
+        className="hover:text-pink-primary ml-1"
+      >
+        club@spaceandbeauty.com
+      </a>
+    </li>
+
+    <li className=" border-gray-200 pb-2">
+      Phone: 
+      <a 
+        href="tel:+919876543210" 
+        className="hover:text-pink-primary ml-1"
+      >
+        +91 98765 43210
+      </a>
+    </li>
+  </ul>
+</div>
       <div />
       <div />
+      
 
       {/* Column 4 - Links */}
-      <div>
+      {/* <div>
         <h3 className="font-manrope text-sm font-bold mb-6">About Us</h3>
         <ul className="space-y-4 font-manrope text-xs font-medium">
           {[
@@ -686,7 +766,8 @@ export default function Index() {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
+      
     </div>
 
     {/* Bottom Bar */}

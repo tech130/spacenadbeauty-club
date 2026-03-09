@@ -124,38 +124,93 @@ export default function NetworkSignupSection() {
   };
 
   /* Razorpay handler */
- const handlePayment = () => {
+//  const handlePayment = () => {
+//   if (!formData.name || !formData.phone || !formData.email) {
+//     alert("Please fill all required fields");
+//     return;
+//   }
+
+//   if (!validateName(formData.name)) {
+//     alert("Name should contain only alphabets");
+//     return;
+//   }
+
+//   if (!validatePhone(formData.phone)) {
+//     alert("Phone should contain only numbers or + -");
+//     return;
+//   }
+
+//   if (!validateEmail(formData.email)) {
+//     alert("Enter valid email");
+//     return;
+//   }
+
+//   // 🔥 PUT YOUR REAL DETAILS HERE
+//   const shopDomain = "spaceandbeauty-club.myshopify.com";
+//   const variantId = "44236697010269";
+
+//   const checkoutUrl =
+//     `https://${shopDomain}/cart/${variantId}:1?checkout[email]=${formData.email}`;
+//     // `https://${shopDomain}/cart/${variantId}:?checkout[email]=${encodeURIComponent(formData.email)}`;
+
+//   window.location.href = checkoutUrl;
+// };
+
+// const handlePayment = () => {
+//   if (!formData.name || !formData.phone || !formData.email) {
+//     alert("Please fill all required fields");
+//     return;
+//   }
+
+//   if (!validateName(formData.name)) {
+//     alert("Name should contain only alphabets");
+//     return;
+//   }
+
+//   if (!validatePhone(formData.phone)) {
+//     alert("Phone should contain only numbers or + -");
+//     return;
+//   }
+
+//   if (!validateEmail(formData.email)) {
+//     alert("Enter valid email");
+//     return;
+//   }
+
+//   const shopDomain = "spaceandbeauty-club.myshopify.com";
+//   const variantId = "44236697010269";
+
+//   const checkoutUrl =
+//     `https://${shopDomain}/cart/${variantId}:1` +
+//     `?checkout[email]=${encodeURIComponent(formData.email)}` +
+//     `&checkout[shipping_address][first_name]=${encodeURIComponent(formData.name)}` +
+//     `&checkout[shipping_address][phone]=${encodeURIComponent(formData.phone)}` +
+//     `&checkout[shipping_address][city]=${encodeURIComponent(formData.city)}`;
+
+//   window.location.href = checkoutUrl;
+// };
+
+const handlePayment = () => {
   if (!formData.name || !formData.phone || !formData.email) {
     alert("Please fill all required fields");
     return;
   }
 
-  if (!validateName(formData.name)) {
-    alert("Name should contain only alphabets");
-    return;
-  }
-
-  if (!validatePhone(formData.phone)) {
-    alert("Phone should contain only numbers or + -");
-    return;
-  }
-
-  if (!validateEmail(formData.email)) {
-    alert("Enter valid email");
-    return;
-  }
-
-  // 🔥 PUT YOUR REAL DETAILS HERE
   const shopDomain = "spaceandbeauty-club.myshopify.com";
-  const variantId = "44236114853981";
+  const variantId = "44236697010269";
 
   const checkoutUrl =
-    `https://${shopDomain}/cart/${variantId}:1?checkout[email]=${formData.email}`;
+    `https://${shopDomain}/cart/${variantId}:1` +
+    `?checkout[email]=${encodeURIComponent(formData.email)}` +
+    `&checkout[shipping_address][first_name]=${encodeURIComponent(formData.name)}` +
+    `&checkout[shipping_address][phone]=${encodeURIComponent(formData.phone)}` +
+    `&checkout[shipping_address][city]=${encodeURIComponent(formData.city)}`;
 
   window.location.href = checkoutUrl;
 };
 
-  
+
+
 
   return (
     <section id="form-section" className="bg-bg-light py-24 relative overflow-hidden">

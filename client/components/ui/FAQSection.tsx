@@ -3,35 +3,40 @@ import { Plus } from "lucide-react";
 
 const faqs = [
   {
-    question: "What is this community about?",
+    question: "What do I get with the ₹2,500 lifetime membership?",
     answer:
-      "This is a women-only community designed to connect like-minded individuals through real-life experiences and meaningful conversations.",
+      "Full access to the SNB Club community, all online sessions, sub-clubs, weekly challenges, member-only drops, and invitations to all chapter events. Individual offline events and special experiences are ticketed separately.",
   },
   {
-    question: "Who can join the group?",
+    question: " Do I have to attend every event?",
     answer:
-      "Any woman looking to build genuine connections, attend curated events, and grow personally or professionally can join.",
+      " Absolutely not. Join the ones that excite you, skip the ones that don't. The membership never expires so there's no pressure — ever.",
   },
   {
-    question: "Is there a membership fee?",
+    question: "I'm not in Chennai. Can I still join?",
     answer:
-      "Some events may be ticketed, while others are free. Membership details will be shared during onboarding.",
+      "Yes! The online community and all virtual sessions are open to members across India. Offline chapters are expanding to more cities soon.",
   },
   {
-    question: "How do I contact the team?",
+    question: "How do I get added to the WhatsApp community after payment?",
     answer:
-      "You can use the form on the left to submit your question, and our team will get back to you shortly.",
+      "You'll receive a WhatsApp invite link on your registered email immediately after your payment is confirmed. If you don't receive it within 10 minutes, drop us a DM on Instagram.",
   },
    {
-    question: "Who can join the group?",
+    question: "Can I join multiple sub-clubs?",
     answer:
-      "Any woman looking to build genuine connections, attend curated events, and grow personally or professionally can join.",
+      "Absolutely. Join as many as you want — book club, art studio, fitness, journaling, games — all included in your membership",
   },
    {
-    question: "Is there a membership fee?",
+    question: "What if I want to attend an offline event?",
     answer:
-      "Some events may be ticketed, while others are free. Membership details will be shared during onboarding.",
+      "Offline events like café meetups, workshops, and special experiences are ticketed individually. Members always get early access and member pricing.",
   },
+  {
+    question: "Is this only for Chennai women?",
+    answer:
+      "Not at all. The SNB Club is for women across India. We're starting events in Chennai and expanding city by city. Online sessions are open to everyone.",
+  }
 ];
 
 export default function FAQSection() {
@@ -42,7 +47,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="relative bg-bg-light py-24">
+    <section className="relative bg-bg-light py-24" id="faq">
       <div className="max-w-[1440px] mx-auto px-6 md:px-20">
         <div className="grid md:grid-cols-2 gap-16">
           
