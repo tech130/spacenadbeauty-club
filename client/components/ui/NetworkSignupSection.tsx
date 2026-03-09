@@ -177,7 +177,8 @@ const handlePayment = () => {
     return;
   }
 
-  const shopDomain = "spaceandbeauty-club.myshopify.com";
+  // const shopDomain = "spaceandbeauty-club.myshopify.com";
+  const shopDomain = "spaceandbeauty.myshopify.com";
   const variantId = "44236697010269";
 
   const checkoutUrl =
