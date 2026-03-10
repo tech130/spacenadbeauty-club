@@ -92,7 +92,7 @@ export default function EventsSection() {
   };
 
   return (
-    <section id="events1" className="bg-bg-light py-24">
+    <section id="events1" className="bg-bg-light py-18">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
 
         {/* Heading */}

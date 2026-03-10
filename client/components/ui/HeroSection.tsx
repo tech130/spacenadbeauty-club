@@ -75,31 +75,35 @@ export default function HeroSection() {
             </svg>
 
             {/* FLOATING GLASS CARD */}
-            <div className="absolute bottom-6 sm:bottom-10 md:bottom-16 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-56 sm:w-64 p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg flex flex-col gap-3 animate-float-slow">
-              <p className="text-lg font-bold text-black/90">Join for Life</p>
+           {/* FLOATING GLASS CARD */}
+<div className="absolute bottom-6 sm:bottom-10 md:bottom-16 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-44 sm:w-56 md:w-64 p-3 sm:p-4 md:p-5 rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg flex flex-col gap-2 sm:gap-3 animate-float-slow text-center md:text-left">
+  
+  <p className="text-base sm:text-lg font-bold text-black/90">
+    Join for Life
+  </p>
 
-              <div className="inline-flex items-center justify-center px-2 py-1 rounded-full bg-gradient-to-r from-[#FF5C7A] to-[#FF8AA0] text-white font-bold text-lg">
-                ₹2,500
-              </div>
+  <div className="inline-flex items-center justify-center px-2 py-1 rounded-full bg-gradient-to-r from-[#FF5C7A] to-[#FF8AA0] text-white font-bold text-base sm:text-lg">
+    ₹2,500
+  </div>
 
-              <div className="flex items-center -space-x-3">
-                <img
-                  src="https://randomuser.me/api/portraits/women/46.jpg"
-                  className="w-9 h-9 rounded-full border-2 border-white"
-                />
-                <img
-                  src="https://randomuser.me/api/portraits/women/44.jpg"
-                  className="w-9 h-9 rounded-full border-2 border-white"
-                />
-                <span className="w-9 h-9 flex items-center justify-center text-white font-semibold text-sm bg-gradient-to-r from-[#FF5C7A] to-[#FF8AA0] rounded-full border-2 border-white">
-                  +99
-                </span>
-              </div>
+  <div className="flex items-center justify-center md:justify-start -space-x-3">
+    <img
+      src="https://randomuser.me/api/portraits/women/46.jpg"
+      className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white"
+    />
+    <img
+      src="https://randomuser.me/api/portraits/women/44.jpg"
+      className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white"
+    />
+    <span className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-white font-semibold text-xs sm:text-sm bg-gradient-to-r from-[#FF5C7A] to-[#FF8AA0] rounded-full border-2 border-white">
+      +99
+    </span>
+  </div>
 
-              <p className="text-sm font-bold text-black/70">
-                One-time payment. Lifetime access.
-              </p>
-            </div>
+  <p className="text-xs sm:text-sm font-bold text-black/70">
+    One-time payment. <br /> Lifetime access.
+  </p>
+</div>
           </div>
 
         </div>

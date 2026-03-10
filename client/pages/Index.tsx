@@ -693,10 +693,10 @@ export default function Index() {
 
   <ul className="space-y-4 font-manrope text-xs font-medium">
     {[
-      { name: "Instagram", link: "https://instagram.com" },
-      { name: "Facebook", link: "https://facebook.com" },
-      { name: "LinkedIn", link: "https://linkedin.com" },
-      { name: "YouTube", link: "https://youtube.com" },
+      { name: "Instagram", link: "https://www.instagram.com/spaceandbeautyclub/" },
+      { name: "Facebook", link: "https://www.facebook.com/spaceandbeauty.official/" },
+      { name: "Twitter", link: "https://x.com/SpaceandBeauty" },
+      { name: "Pinterest", link: "https://in.pinterest.com/heyspaceandbeauty/" },
     ].map((item) => (
       <li key={item.name} className=" border-gray-200 pb-2">
         <a
