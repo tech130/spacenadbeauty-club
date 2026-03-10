@@ -3,7 +3,6 @@ import { useState } from "react";
 const categories = ["All", "Chill", "Social", "Creative", "Wellness"];
 
 const events = [
-  // COLUMN 1
   {
     id: 1,
     column: 1,
@@ -28,8 +27,6 @@ const events = [
     image:
       "https://spaceandbeauty-club.s3.ap-south-1.amazonaws.com/cat3.png",
   },
-
-  // COLUMN 2
   {
     id: 3,
     column: 2,
@@ -42,9 +39,6 @@ const events = [
     image:
       "https://spaceandbeauty-club.s3.ap-south-1.amazonaws.com/cat2.png",
   },
- 
-
-  // COLUMN 3
   {
     id: 5,
     column: 3,
@@ -57,24 +51,8 @@ const events = [
     image:
       "https://spaceandbeauty-club.s3.ap-south-1.amazonaws.com/cat4.png",
   },
-  
-
-  // COLUMN 4 (FEATURED)
-//   {
-//     id: 7,
-//     column: 4,
-//     height: "featured",
-//     category: "Chill",
-//     title: "Weekend Retreats",
-//     subtitle: "Slow Living",
-//     desc: "Disconnect from noise. Reconnect with people.",
-//     tags: ["Deep", "Calm", "Intentional"],
-//     image:
-//       "https://images.unsplash.com/photo-1506784983877-45594efa4cbe",
-//   },
-
-   {
-    id: 3,
+  {
+    id: 6,
     column: 4,
     height: "small",
     category: "Wellness",
@@ -85,7 +63,7 @@ const events = [
     image:
       "https://spaceandbeauty-club.s3.ap-south-1.amazonaws.com/cat5.png",
   },
-{
+  {
     id: 7,
     column: 4,
     height: "small",
@@ -105,16 +83,16 @@ export default function EventsSection() {
   const filteredEvents =
     activeCategory === "All"
       ? events
-      : events.filter(e => e.category === activeCategory);
+      : events.filter((e) => e.category === activeCategory);
 
-  const getHeight = h => {
-    if (h === "small") return "h-[263px]";
-    if (h === "tall") return "h-[542px]";
-    return "h-[812px]";
+  const getHeight = (h) => {
+    if (h === "small") return "h-[260px] md:h-[263px]";
+    if (h === "tall") return "h-[260px] md:h-[542px]";
+    return "h-[260px] md:h-[812px]";
   };
 
   return (
-    <section id="events1" className="bg-bg-light py-24 ">
+    <section id="events1" className="bg-bg-light py-24">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
 
         {/* Heading */}
@@ -130,7 +108,7 @@ export default function EventsSection() {
 
         {/* Categories */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map(cat => (
+          {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
@@ -148,11 +126,11 @@ export default function EventsSection() {
 
         {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-          {[1, 2, 3, 4].map(col => (
+          {[1, 2, 3, 4].map((col) => (
             <div key={col} className="space-y-6">
               {filteredEvents
-                .filter(e => e.column === col)
-                .map(event => (
+                .filter((e) => e.column === col)
+                .map((event) => (
                   <div
                     key={event.id}
                     className={`rounded-[38px] overflow-hidden relative ${getHeight(
@@ -177,7 +155,7 @@ export default function EventsSection() {
                       </p>
 
                       <div className="flex gap-2 flex-wrap">
-                        {event.tags.map(tag => (
+                        {event.tags.map((tag) => (
                           <span
                             key={tag}
                             className="px-4 py-1 rounded-full bg-gradient-primary text-white text-xs font-bold"
@@ -192,6 +170,7 @@ export default function EventsSection() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
