@@ -209,21 +209,21 @@ export default function NetworkSignupSection() {
 //   window.location.href = checkoutUrl;
 // };
 
-const handlePayment = () => {
-  if (!formData.name || !formData.phone || !formData.email) {
-    alert("Please fill all required fields");
-    return;
-  }
+// const handlePayment = () => {
+//   if (!formData.name || !formData.phone || !formData.email) {
+//     alert("Please fill all required fields");
+//     return;
+//   }
 
-  const shopDomain = "spaceandbeauty-club.myshopify.com";
-  const variantId = "44236697010269";
+//   const shopDomain = "spaceandbeauty-club.myshopify.com";
+//   const variantId = "44236697010269";
 
-  const checkoutUrl =
-    `https://${shopDomain}/cart/${variantId}:1` +
-    `?checkout[email]=${encodeURIComponent(formData.email)}`;
+//   const checkoutUrl =
+//     `https://${shopDomain}/cart/${variantId}:1` +
+//     `?checkout[email]=${encodeURIComponent(formData.email)}`;
 
-  window.location.href = checkoutUrl;
-};
+//   window.location.href = checkoutUrl;
+// };
 // const handlePayment = () => {
 //   if (!formData.name || !formData.phone || !formData.email) {
 //     alert("Please fill all required fields");
@@ -271,6 +271,26 @@ const handlePayment = () => {
 
 //   window.location.href = checkoutUrl;
 // };
+
+const handlePayment = () => {
+  // 1️⃣ Validate required fields
+  if (!formData.name || !formData.phone || !formData.email) {
+    alert("Please fill all required fields");
+    return;
+  }
+
+  // 2️⃣ Shopify domain & product variant
+  const shopDomain = "spaceandbeauty-club.myshopify.com";
+  const variantId = "44236697010269";
+
+  // 3️⃣ Build checkout URL (only email prefilling for now)
+  const checkoutUrl =
+    `https://${shopDomain}/cart/${variantId}:1` +
+    `?checkout[email]=${encodeURIComponent(formData.email)}`;
+
+  // 4️⃣ Redirect to Shopify checkout
+  window.location.href = checkoutUrl;
+};
 
 
   return (
